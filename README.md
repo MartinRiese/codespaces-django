@@ -22,6 +22,8 @@ python manage.py createsuperuser
 ```
 
 ### Run server
-```python
+```
 python manage.py runserver
 ```
+
+### ct
