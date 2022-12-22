@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Courses</title>
 </head>
 <body>
 {% if course_list %}
 <ul>
     {% for course in course_list %}
-    <li><a href="/gpa/{{ course.id }}/">{{ course.name }}</a></li>
+    <li><a href="/gpa/course{{ course.id }}/">{{ course.name }}</a></li>
     {% endfor %}
 </ul>
 {% else %}

@@ -1,11 +1,19 @@
 from django.views import generic
 
-from .models import Course
+from .models import Course, Student
 
 
-class IndexView(generic.ListView):
+class CourseIndexView(generic.ListView):
     context_object_name = 'course_list'
 
     def get_queryset(self):
-        """Return the last five published questions."""
+        """Return all courses"""
         return Course.objects.all()
+
+
+class StudentIndexView(generic.ListView):
+    context_object_name = 'student_list'
+
+    def get_queryset(self):
+        """Return all students"""
+        return Student.objects.all()
