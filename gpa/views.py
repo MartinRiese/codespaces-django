@@ -11,6 +11,10 @@ class CourseIndexView(generic.ListView):
         return Course.objects.all()
 
 
+class CourseDetailView(generic.DetailView):
+    model = Course
+
+
 class StudentIndexView(generic.ListView):
     context_object_name = 'student_list'
 
