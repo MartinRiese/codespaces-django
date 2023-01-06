@@ -5,7 +5,15 @@
     <title>{{ course.name }}</title>
 </head>
 <body>
-<h1>{{ course.name }}</h1>
-<h1>Credits: {{ course.credit }}</h1>
+
+<a href="{% url 'gpa:course_index' %}">Course List</a>
+<form action="{% url 'gpa:course_update' course.id %}" method="post">
+    {% csrf_token %}
+    <label for="fname">Course title:</label>
+    <input type="text" id="name" name="name" value="{{ course.name }}"><br><br>
+    <label for="fname">Credits:</label>
+    <input type="number" id="fname" name="fname" value="{{ course.credit }}"><br><br>
+    <input type="submit" value="Update">
+</form>
 </body>
 </html>

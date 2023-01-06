@@ -1,5 +1,8 @@
 from django.views import generic
 
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 from .models import Course, Student
 
 
@@ -13,6 +16,14 @@ class CourseIndexView(generic.ListView):
 
 class CourseDetailView(generic.DetailView):
     model = Course
+
+
+# class CourseUpdateView(generic.UpdateView):
+#     model = Course
+
+def update(request, course_id):
+    print(f"updating {course_id}: {request}")
+    return HttpResponseRedirect(reverse('gpa:course_detail', args=(course_id,)))
 
 
 class StudentIndexView(generic.ListView):
